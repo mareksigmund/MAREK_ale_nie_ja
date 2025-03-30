@@ -1,0 +1,31 @@
+<div class="login-wrapper">
+  <div class="login-welcome">
+    <h1>PIXEL QUEST</h1>
+    <p>Witaj w świecie przygód! Zaloguj się lub stwórz nową postać.</p>
+  </div>
+
+  <div class="login-box">
+    <div class="tabs">
+      <button [class.active]="tab === 'login'" (click)="tab = 'login'">
+        Login
+      </button>
+      <button [class.active]="tab === 'register'" (click)="tab = 'register'">
+        Register
+      </button>
+    </div>
+
+    <div *ngIf="tab === 'login'" class="form">
+      <input type="text" placeholder="Nickname" [(ngModel)]="nickname" />
+      <button (click)="login()">Login</button>
+    </div>
+
+    <div *ngIf="tab === 'register'" class="form">
+      <input type="text" placeholder="New Nickname" [(ngModel)]="nickname" />
+      <select [(ngModel)]="selectedClass">
+        <option value="Warrior">Warrior</option>
+        <option value="Wizard">Wizard</option>
+      </select>
+      <button (click)="register()">Register</button>
+    </div>
+  </div>
+</div>
