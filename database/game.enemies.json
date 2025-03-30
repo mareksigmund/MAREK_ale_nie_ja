@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03703"
+  },
+  "enemyName": "Tier 1 Minor",
+  "isPlayer": false,
+  "questId": 11,
+  "att1": 1,
+  "att2": 1,
+  "weaponSprite": 30,
+  "damage": 8,
+  "healthPoints": 16,
+  "armorPoints": 20,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03704"
+  },
+  "enemyName": "Tier 1 Major",
+  "isPlayer": false,
+  "questId": 12,
+  "att1": 2,
+  "att2": 2,
+  "weaponSprite": 30,
+  "damage": 10,
+  "healthPoints": 32,
+  "armorPoints": 22,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03705"
+  },
+  "enemyName": "Tier 2 Minor",
+  "isPlayer": false,
+  "questId": 21,
+  "att1": 3,
+  "att2": 3,
+  "weaponSprite": 30,
+  "damage": 12,
+  "healthPoints": 38,
+  "armorPoints": 24,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03706"
+  },
+  "enemyName": "Tier 2 Major",
+  "isPlayer": false,
+  "questId": 22,
+  "att1": 5,
+  "att2": 4,
+  "weaponSprite": 30,
+  "damage": 18,
+  "healthPoints": 64,
+  "armorPoints": 28,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03707"
+  },
+  "enemyName": "Tier 3 Minor",
+  "isPlayer": false,
+  "questId": 31,
+  "att1": 6,
+  "att2": 6,
+  "weaponSprite": 30,
+  "damage": 18,
+  "healthPoints": 76,
+  "armorPoints": 28,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03708"
+  },
+  "enemyName": "Tier 3 Major",
+  "isPlayer": false,
+  "questId": 32,
+  "att1": 8,
+  "att2": 8,
+  "weaponSprite": 30,
+  "damage": 20,
+  "healthPoints": 114,
+  "armorPoints": 32,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf03709"
+  },
+  "enemyName": "Tier 4 Minor",
+  "isPlayer": false,
+  "questId": 41,
+  "att1": 8,
+  "att2": 8,
+  "weaponSprite": 30,
+  "damage": 18,
+  "healthPoints": 118,
+  "armorPoints": 32,
+  "avatarSprite": 300
+},
+{
+  "_id": {
+    "$oid": "67e2d2f34a78596b8bf0370a"
+  },
+  "enemyName": "Tier 4 Major",
+  "isPlayer": false,
+  "questId": 42,
+  "att1": 9,
+  "att2": 8,
+  "weaponSprite": 30,
+  "damage": 22,
+  "healthPoints": 228,
+  "armorPoints": 32,
+  "avatarSprite": 300
+}]

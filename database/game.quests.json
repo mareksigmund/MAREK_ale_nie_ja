@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036c9"
+  },
+  "questId": 11,
+  "name": "TIER 1 MINOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 6,
+  "xp": 18,
+  "tier1gearchance": 0.1,
+  "tier2gearchance": 0,
+  "tier3gearchance": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036ca"
+  },
+  "questId": 12,
+  "name": "TIER 1 MAJOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 60,
+  "xp": 60,
+  "tier1gearchance": 0,
+  "tier2gearchance": 0,
+  "tier3gearchance": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036cb"
+  },
+  "questId": 21,
+  "name": "TIER 2 MINOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 12,
+  "xp": 60,
+  "tier1gearchance": 0.4,
+  "tier2gearchance": 0.1,
+  "tier3gearchance": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036cc"
+  },
+  "questId": 22,
+  "name": "TIER 2 MAJOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 120,
+  "xp": 280,
+  "tier1gearchance": 0,
+  "tier2gearchance": 0,
+  "tier3gearchance": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036cd"
+  },
+  "questId": 31,
+  "name": "TIER 3 MINOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 24,
+  "xp": 120,
+  "tier1gearchance": 0.8,
+  "tier2gearchance": 0.4,
+  "tier3gearchance": 0.1
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036ce"
+  },
+  "questId": 32,
+  "name": "TIER 3 MAJOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 240,
+  "xp": 960,
+  "tier1gearchance": 0,
+  "tier2gearchance": 0,
+  "tier3gearchance": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036cf"
+  },
+  "questId": 41,
+  "name": "TIER 4 MINOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 36,
+  "xp": 248,
+  "tier1gearchance": 1,
+  "tier2gearchance": 0.8,
+  "tier3gearchance": 0.4
+},
+{
+  "_id": {
+    "$oid": "67e2b6eb4a78596b8bf036d0"
+  },
+  "questId": 42,
+  "name": "TIER 4 MAJOR",
+  "desc": "QUEST DESCRIPTION",
+  "background": "test_bg.svg",
+  "time": 480,
+  "xp": 6666,
+  "tier1gearchance": 0,
+  "tier2gearchance": 0,
+  "tier3gearchance": 0
+}]

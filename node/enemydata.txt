@@ -1,0 +1,11 @@
+Enemy enemy_1_1 = new Enemy("Tier_1_Minor", 1, 1, 8, 20, 16);  
+Enemy enemy_1_2 = new Enemy("Tier_1_Major", 2, 2, 10, 22, 32);  //look at tier 1 gear
+
+Enemy enemy_2_1 = new Enemy("Tier_2_Minor", 3, 3, 12, 24, 38); 
+Enemy enemy_2_2 = new Enemy("Tier_2_Major", 5, 4, 18, 28, 64); //look at tier 1-2 gear
+
+Enemy enemy_3_1 = new Enemy("Tier_3_Minor", 6, 6, 18, 28, 76);
+Enemy enemy_3_2 = new Enemy("Tier_3_Major", 8, 8, 20, 32, 114); //look at tier 2-3 gear
+
+Enemy enemy_4_1 = new Enemy("Tier_4_Minor", 8, 8, 18, 32, 118); 
+Enemy enemy_4_2 = new Enemy("Tier_4_Major", 9, 8, 22, 32, 228); //look at tier 3 gear

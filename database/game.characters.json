@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "67e85905a9e5d061a29f92e4"
+  },
+  "charName": "Warrior",
+  "charPassword": "----",
+  "charClass": "Warrior",
+  "avatarId": 0,
+  "colorId": 0,
+  "titleId": 0,
+  "level": 1,
+  "totalXP": 0,
+  "toLevelUp": 12,
+  "att1": 1,
+  "att2": 1,
+  "att3": 1,
+  "equippedWeaponId": 0,
+  "equippedArmorId": 0,
+  "avatarSprite": 100,
+  "weaponSprite": 10,
+  "weaponDamage": 8,
+  "healthPoints": 21,
+  "armorPoints": 12,
+  "weaponUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "armorUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "colorUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "titleUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "storyStage": 0,
+  "totalQuests": 0,
+  "onQuest": false,
+  "questId": 11,
+  "questBegin": 0,
+  "questEnd": 1,
+  "arenaWins": 0,
+  "arenaWinstreak": 0
+},
+{
+  "_id": {
+    "$oid": "67e85909a9e5d061a29f92e8"
+  },
+  "charName": "Wizard",
+  "charPassword": "----",
+  "charClass": "Wizard",
+  "avatarId": 0,
+  "colorId": 0,
+  "titleId": 0,
+  "level": 7,
+  "totalXP": 10035,
+  "toLevelUp": 0,
+  "att1": 10,
+  "att2": 10,
+  "att3": 10,
+  "equippedWeaponId": 0,
+  "equippedArmorId": 0,
+  "avatarSprite": 200,
+  "weaponSprite": 20,
+  "weaponDamage": 8,
+  "healthPoints": 162,
+  "armorPoints": 12,
+  "weaponUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "armorUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "colorUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "titleUnlocks": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "storyStage": 0,
+  "totalQuests": 3,
+  "onQuest": false,
+  "questId": 11,
+  "questBegin": 1743286374074,
+  "questEnd": 1743286374074,
+  "arenaWins": 0,
+  "arenaWinstreak": 0
+}]
