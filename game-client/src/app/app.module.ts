@@ -10,6 +10,7 @@ import { QuestComponent } from './pages/quest/quest.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { CharacterComponent } from './pages/character/character.component';
 import { ArenaComponent } from './pages/arena/arena.component';
+import { FightComponent } from './components/fight/fight.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArenaComponent } from './pages/arena/arena.component';
     QuestComponent,
     MainLayoutComponent,
     CharacterComponent,
-    ArenaComponent
+    ArenaComponent,
+    FightComponent
   ],
   imports: [
     BrowserModule,

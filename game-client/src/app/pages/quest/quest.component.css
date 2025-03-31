@@ -1,19 +1,51 @@
-.quest-wrapper {
-    height: 100vh;
-    background-color: #0C0C0C; /* czarne tło */
-    color: #F3F3F3;            /* biały tekst */
-    font-family: 'Pixelify Sans', sans-serif;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .quest-content {
-    text-align: center;
-    padding: 2rem;
-    border: 2px solid #F3F3F3;
-    border-radius: 12px;
-    background-color: rgba(12, 12, 12, 0.9); /* delikatne przyciemnienie */
-  }
-  
+.quest-container {
+  height: 100%;
+  width: 100%;
+  background-image: url('../../../assets/backgrounds/quest_bg.svg');
+  background-size: cover;
+  background-position: center;
+  color: #F3F3F3;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.quest-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 2rem;
+}
+
+.quest-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 200px;
+}
+
+.quest-buttons button {
+  padding: 0.6rem 1rem;
+  border: 1px solid #F3F3F3;
+  background: none;
+  color: #F3F3F3;
+  border-radius: 8px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quest-buttons button:hover:not(:disabled) {
+  background-color: #F3F3F3;
+  color: #0C0C0C;
+}
+
+.quest-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quest-story {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}

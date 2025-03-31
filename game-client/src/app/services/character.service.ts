@@ -20,8 +20,14 @@ export class CharacterService {
     return this.http.post(`${this.apiUrl}/createCharacter`, null, { params });
   }
 
-  getCharacterByName(charName: string): Observable<any> {
-    const params = new HttpParams().set('charName', charName);
-    return this.http.get(`${this.apiUrl}/getCharacterByName`, { params });
+  getCharacterByName(name: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getCharacterByName?charName=${name}`);
   }
+
+  getQuestCountdown(charName: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/characterCheckQuest?charName=${charName}`);
+  }
+
+
+  
 }

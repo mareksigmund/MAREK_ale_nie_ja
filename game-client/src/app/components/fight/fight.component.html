@@ -1,0 +1,46 @@
+<div class="fight-container" *ngIf="fightData">
+  <div class="fighter left">
+    <div [style.color]="getColor(fightData.color1)">{{ fightData.name1 }}</div>
+    <div [style.color]="getColor(fightData.color1)">
+      {{ getTitle(fightData.title1) }}
+    </div>
+    <img
+      [src]="'../../../assets/avatars/' + fightData.avatar1 + '.svg'"
+      class="avatar"
+    />
+    <div class="hp-bar">
+      <div
+        class="hp-fill"
+        [style.width.%]="(playerHp / fightData.hp1) * 100"
+      ></div>
+    </div>
+    <div class="hp-label">{{ playerHp }}/{{ fightData.hp1 }}</div>
+  </div>
+
+  <div class="middle">
+    <button (click)="skip()">SKIP</button>
+  </div>
+
+  <div class="fighter right">
+    <div [style.color]="getColor(fightData.color2)">{{ fightData.name2 }}</div>
+    <div [style.color]="getColor(fightData.color2)">
+      {{ getTitle(fightData.title2) }}
+    </div>
+    <img
+      [src]="'../../../assets/avatars/' + fightData.avatar2 + '.svg'"
+      class="avatar"
+    />
+    <div class="hp-bar">
+      <div
+        class="hp-fill"
+        [style.width.%]="(enemyHp / fightData.hp2) * 100"
+      ></div>
+    </div>
+    <div class="hp-label">{{ enemyHp }}/{{ fightData.hp2 }}</div>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div class="popup" *ngIf="showResultPopup">
+  <h2>{{ resultText }}</h2>
+</div>
