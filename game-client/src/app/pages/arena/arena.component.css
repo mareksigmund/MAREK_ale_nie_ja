@@ -1,0 +1,43 @@
+.arena-container {
+    background-image: url('../../../assets/backgrounds/arena_bg.svg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arena-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 12px;
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #F3F3F3;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #0C0C0C;
+    color: #F3F3F3;
+    border: 2px solid #F9F1A5;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #E74856;
+    color: #F3F3F3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #61D6D6;
+  }
+  

@@ -27,6 +27,7 @@ app.get('/getArenaFight', async (req, res) => {
 
   const {charName, opponentName} = req.query;
 
+
   if(opponentName == "random") {
 
   }
@@ -72,6 +73,8 @@ app.get('/getArenaFight', async (req, res) => {
   return res.status(404).send();
 
 });
+
+
 
 
 
@@ -468,7 +471,7 @@ async function CharUdateDerived(charName) {
 
     case 7:
     
-      char.toLevelU=math.abs(math.max(0,3540-char.totalXP));
+      char.toLevelUp=math.abs(math.max(0,3540-char.totalXP));
       break;
 
     case 8:
