@@ -16,11 +16,13 @@
 
     <div *ngIf="tab === 'login'" class="form">
       <input type="text" placeholder="Nickname" [(ngModel)]="nickname" />
+      <input type="password" placeholder="Password" />
       <button (click)="login()">Login</button>
     </div>
 
     <div *ngIf="tab === 'register'" class="form">
       <input type="text" placeholder="New Nickname" [(ngModel)]="nickname" />
+      <input type="password" placeholder="Password" />
       <select [(ngModel)]="selectedClass">
         <option value="Warrior">Warrior</option>
         <option value="Wizard">Wizard</option>
