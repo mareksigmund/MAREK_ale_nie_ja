@@ -7,12 +7,18 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestComponent } from './pages/quest/quest.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { CharacterComponent } from './pages/character/character.component';
+import { ArenaComponent } from './pages/arena/arena.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    QuestComponent
+    QuestComponent,
+    MainLayoutComponent,
+    CharacterComponent,
+    ArenaComponent
   ],
   imports: [
     BrowserModule,

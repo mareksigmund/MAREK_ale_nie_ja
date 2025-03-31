@@ -1,0 +1,11 @@
+<div class="main-layout-wrapper">
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="bottom-nav">
+    <button (click)="navigateTo('quest')">QUEST</button>
+    <button (click)="navigateTo('character')">CHARACTER</button>
+    <button (click)="navigateTo('arena')">ARENA</button>
+    <button (click)="logout()">LOG OUT</button>
+  </div>
+</div>

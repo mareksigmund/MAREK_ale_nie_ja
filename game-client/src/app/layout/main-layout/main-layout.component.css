@@ -1,0 +1,23 @@
+.main-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 💡 Cała wysokość okna */
+  }
+  
+  .main-content {
+    flex: 1;
+    overflow: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border-top: 1px solid white;
+    background-color: #0C0C0C;
+  }
+  
