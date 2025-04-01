@@ -11,7 +11,7 @@
     <div class="hp-bar">
       <div
         class="hp-fill"
-        [style.width.%]="(playerHp / fightData.hp1) * 100"
+        [style.width.%]="getHpPercent(playerHp, fightData.hp1)"
       ></div>
     </div>
     <div class="hp-label">{{ playerHp }}/{{ fightData.hp1 }}</div>
@@ -33,7 +33,7 @@
     <div class="hp-bar">
       <div
         class="hp-fill"
-        [style.width.%]="(enemyHp / fightData.hp2) * 100"
+        [style.width.%]="getHpPercent(enemyHp, fightData.hp2)"
       ></div>
     </div>
     <div class="hp-label">{{ enemyHp }}/{{ fightData.hp2 }}</div>

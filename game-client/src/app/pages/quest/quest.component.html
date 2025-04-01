@@ -3,47 +3,40 @@
   <div class="quest-grid">
     <!-- LEWA STRONA: przyciski -->
     <div class="quest-buttons">
-      <h3>Repeatable Quests</h3>
-      <button disabled>Quest I</button>
-      <button disabled>Quest II</button>
-
+      <!-- STORY QUESTS -->
       <h3>Story Quests</h3>
-      <!-- STORY STAGE 0 -->
+      <button [disabled]="storyStage! !== 0" (click)="beginQuest(12)">
+        Quest II
+      </button>
+      <button [disabled]="storyStage! !== 1" (click)="beginQuest(22)">
+        Quest IV
+      </button>
+      <button [disabled]="storyStage! !== 2" (click)="beginQuest(32)">
+        Quest VI
+      </button>
+      <button [disabled]="storyStage! !== 3" (click)="beginQuest(42)">
+        Quest VIII
+      </button>
+
+      <!-- REPEATABLE QUESTS -->
+      <h3>Repeatable Quests</h3>
       <button [disabled]="storyStage! < 0" (click)="beginQuest(11)">
         Quest I
       </button>
-      <button [disabled]="storyStage! < 0" (click)="beginQuest(12)">
-        Quest II
-      </button>
-
-      <!-- STORY STAGE 1 -->
       <button [disabled]="storyStage! < 1" (click)="beginQuest(21)">
         Quest III
       </button>
-      <button [disabled]="storyStage! < 1" (click)="beginQuest(22)">
-        Quest IV
-      </button>
-
-      <!-- STORY STAGE 2 -->
       <button [disabled]="storyStage! < 2" (click)="beginQuest(31)">
         Quest V
       </button>
-      <button [disabled]="storyStage! < 2" (click)="beginQuest(32)">
-        Quest VI
-      </button>
-
-      <!-- STORY STAGE 3 -->
       <button [disabled]="storyStage! < 3" (click)="beginQuest(41)">
         Quest VII
-      </button>
-      <button [disabled]="storyStage! < 3" (click)="beginQuest(42)">
-        Quest VIII
       </button>
     </div>
 
     <!-- PRAWA STRONA: tekst fabularny -->
     <div class="quest-story">
-      <h2>STORY{{ storyStage }}</h2>
+      <h2>STORY {{ storyStage }}</h2>
       <p>Tu pojawi się tekst fabularny dla storyStage = {{ storyStage }}</p>
     </div>
   </div>

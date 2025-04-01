@@ -23,64 +23,10 @@ CharacterModel.countDocuments({}).then(count => console.log(count + " characters
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-app.get('/getArenaFight', async (req, res) => {
-
-  const {charName, opponentName} = req.query;
-
-
-  if(opponentName == "random") {
-
-  }
-  else {
-
-  }
-  const char = await CharacterModel.findOne({charName: charName});
-  // colorId = Number(colorId);
-  // titleId = Number(titleId);
-  // equippedArmorId = Number(equippedArmorId);
-  // equippedWeaponId = Number(equippedWeaponId);
-
-  if(char){
-
-    if(!(colorId<0 || colorId>3 || titleId<0 || titleId>3 || equippedArmorId<0 || equippedArmorId>3 || equippedWeaponId<0 || equippedWeaponId>3))
-    {
-      if(char.colorUnlocks[colorId]!=false)
-      {
-        char.colorId = colorId;
-      }
-      if(char.armorUnlocks[equippedArmorId]!=false)
-      {
-        char.equippedArmorId = equippedArmorId;
-      }
-      if(char.weaponUnlocks[equippedWeaponId]!=false)
-      {
-        char.equippedWeaponId = equippedWeaponId;
-      }
-      if(char.titleUnlocks[colorId]!=false)
-      {
-        char.titleId = titleId;
-      }
-
-    }else{
-      return res.status(400).send();
-    }
-    await char.save();
-    CharUdateDerived(charName);
-    return res.status(200).send();
-
-  }
-  
-  return res.status(404).send();
-
-});
-
-
-
-
 
 app.post('/characterUpdateEquip', async (req, res) => {
 
-  const {charName, colorId, titleId, equippedArmorId, equippedWeaponId} = req.query;
+  const {charName, avatarId, colorId, titleId, equippedArmorId, equippedWeaponId} = req.query;
   const char = await CharacterModel.findOne({charName: charName});
   // colorId = Number(colorId);
   // titleId = Number(titleId);
@@ -107,6 +53,7 @@ app.post('/characterUpdateEquip', async (req, res) => {
       {
         char.titleId = titleId;
       }
+      char.avatarId = avatarId
 
     }else{
       return res.status(400).send();
@@ -257,7 +204,7 @@ app.get('/getQuestFight', async (req, res) => {
     avatar2: enemy.avatarSprite,
     color2: 1,
     name2: enemy.enemyName,
-    title2: "title2",
+    title2: 0,
     hp2: enemy.healthPoints,
     playerWin: playerWin,
     xp: xp,
@@ -280,8 +227,7 @@ app.get('/getQuestFight', async (req, res) => {
 
 app.get('/getArenaFight', async (req, res) => {
 
-
-  const {charName, opponentame} = req.query;
+  const {charName, opponentName} = req.query;
   const char = await CharacterModel.findOne({charName: charName});
   const quest = await QuestModel.findOne({questId: 11});
   var unlockedStuff = false;
@@ -372,13 +318,12 @@ app.get('/getArenaFight', async (req, res) => {
     title1: char.titleId,
     hp1: char.healthPoints,
 
-    avatar2: enemy.avatarSprite,
+    avatar2: 202,
     color2: 1,
-    name2: enemy.enemyName,
-    title2: 0,
+    name2: "other player",
+    title2: 10,
     hp2: enemy.healthPoints,
     playerWin: playerWin,
-    xp: xp,
     turns: turns,
     unlockedStuff: unlockedStuff
 
@@ -471,7 +416,7 @@ async function CharUdateDerived(charName) {
 
     case 7:
     
-      char.toLevelUp=math.abs(math.max(0,3540-char.totalXP));
+      char.toLevelU=math.abs(math.max(0,3540-char.totalXP));
       break;
 
     case 8:

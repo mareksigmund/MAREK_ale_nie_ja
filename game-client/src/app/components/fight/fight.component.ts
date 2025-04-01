@@ -94,4 +94,10 @@ export class FightComponent implements OnInit {
     };
     return titles[id] || '';
   }
+
+  getHpPercent(currentHp: number, maxHp: number): number {
+    const percent = (currentHp / maxHp) * 100;
+    return Math.max(0, percent); // nie pozwól zejść poniżej 0%
+  }
+  
 }

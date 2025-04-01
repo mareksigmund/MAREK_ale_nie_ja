@@ -12,16 +12,16 @@ export class ArenaComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  findOpponent(): void {
+  private sendFightRequest(opponent: string): void {
     const charName = localStorage.getItem('currentChar');
-    if (!charName || !this.opponentName) {
-      alert("Missing character or opponent name");
+    if (!charName) {
+      alert('Brak aktywnej postaci!');
       return;
     }
 
     const params = new HttpParams()
       .set('charName', charName)
-      .set('opponentName', this.opponentName);
+      .set('opponentName', opponent);
 
     this.http.get('http://localhost:8080/getArenaFight', { params }).subscribe({
       next: (data: any) => {
@@ -29,32 +29,21 @@ export class ArenaComponent {
         this.router.navigate(['/arena-fight']);
       },
       error: (err) => {
-        console.error(err);
-        alert("Opponent not found or error occurred.");
+        console.error('Błąd pobierania areny:', err);
+        alert('Nie udało się znaleźć przeciwnika!');
       }
     });
   }
 
-  randomOpponent(): void {
-    const charName = localStorage.getItem('currentChar');
-    if (!charName) {
-      alert("Missing character");
+  findOpponent(): void {
+    if (!this.opponentName.trim()) {
+      alert('Wpisz nazwę przeciwnika!');
       return;
     }
+    this.sendFightRequest(this.opponentName.trim());
+  }
 
-    const params = new HttpParams()
-      .set('charName', charName)
-      .set('opponentName', 'random');
-
-    this.http.get('http://localhost:8080/getArenaFight', { params }).subscribe({
-      next: (data: any) => {
-        localStorage.setItem('arenaFight', JSON.stringify(data));
-        this.router.navigate(['/arena-fight']);
-      },
-      error: (err) => {
-        console.error(err);
-        alert("Could not find random opponent.");
-      }
-    });
+  randomOpponent(): void {
+    this.sendFightRequest('random');
   }
 }

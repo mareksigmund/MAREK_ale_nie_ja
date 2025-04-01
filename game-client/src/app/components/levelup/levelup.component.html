@@ -1,32 +1,39 @@
 <div class="levelup-container">
-  <h2>LEVEL UP!</h2>
+  <div class="levelup-panel">
+    <h2>LEVEL UP!</h2>
 
-  <div class="attribute-group">
-    <label>Siła (STR)</label>
-    <select [(ngModel)]="first">
-      <option [value]="0">0</option>
-      <option [value]="1">1</option>
-      <option [value]="2">2</option>
-    </select>
+    <div class="levelup-grid">
+      <!-- STR -->
+      <div class="attribute-row">
+        <span class="attr-label">Siła (STR)</span>
+        <select [(ngModel)]="first">
+          <option [value]="0">0</option>
+          <option [value]="1">1</option>
+          <option [value]="2">2</option>
+        </select>
+      </div>
+
+      <!-- DEX -->
+      <div class="attribute-row">
+        <span class="attr-label">Zręczność (DEX)</span>
+        <select [(ngModel)]="second">
+          <option [value]="0">0</option>
+          <option [value]="1">1</option>
+          <option [value]="2">2</option>
+        </select>
+      </div>
+
+      <!-- CON -->
+      <div class="attribute-row">
+        <span class="attr-label">Kondycja (CON)</span>
+        <select [(ngModel)]="third">
+          <option [value]="0">0</option>
+          <option [value]="1">1</option>
+          <option [value]="2">2</option>
+        </select>
+      </div>
+    </div>
+
+    <button (click)="levelUp()">Level up!</button>
   </div>
-
-  <div class="attribute-group">
-    <label>Zręczność (DEX)</label>
-    <select [(ngModel)]="second">
-      <option [value]="0">0</option>
-      <option [value]="1">1</option>
-      <option [value]="2">2</option>
-    </select>
-  </div>
-
-  <div class="attribute-group">
-    <label>Kondycja (CON)</label>
-    <select [(ngModel)]="third">
-      <option [value]="0">0</option>
-      <option [value]="1">1</option>
-      <option [value]="2">2</option>
-    </select>
-  </div>
-
-  <button (click)="levelUp()">Level up!</button>
 </div>

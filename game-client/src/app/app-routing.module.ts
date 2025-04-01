@@ -7,6 +7,7 @@ import { CharacterComponent } from './pages/character/character.component';
 import { ArenaComponent } from './pages/arena/arena.component';
 import { FightComponent } from './components/fight/fight.component';
 import { LevelupComponent } from './components/levelup/levelup.component';
+import { ArenaFightComponent } from './components/arena-fight/arena-fight.component';
 
 const routes: Routes = [
   
@@ -22,7 +23,9 @@ const routes: Routes = [
       { path: 'character', component: CharacterComponent },
       { path: 'arena', component: ArenaComponent },
       { path: 'fight', component: FightComponent },
-      { path: 'levelup', component: LevelupComponent }
+      { path: 'levelup', component: LevelupComponent },
+      { path: 'arena-fight', component: ArenaFightComponent}
+      
     ]
   }
 ];

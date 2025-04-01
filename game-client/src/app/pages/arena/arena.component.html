@@ -1,11 +1,15 @@
 <div class="arena-container">
-  <div class="arena-content">
-    <input
-      type="text"
-      [(ngModel)]="opponentName"
-      placeholder="Enter opponent name"
-    />
-    <button (click)="findOpponent()">FIND OPPONENT</button>
-    <button (click)="randomOpponent()">RANDOM OPPONENT</button>
+  <div class="arena-wrapper">
+    <div class="arena-panel">
+      <input
+        type="text"
+        [(ngModel)]="opponentName"
+        placeholder="Opponent name..."
+      />
+      <button class="find-btn" (click)="findOpponent()">FIND OPPONENT</button>
+      <button class="random-btn" (click)="randomOpponent()">
+        RANDOM OPPONENT
+      </button>
+    </div>
   </div>
 </div>
