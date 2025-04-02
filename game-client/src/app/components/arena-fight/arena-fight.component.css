@@ -1,22 +1,27 @@
 .arena-fight-bg {
-    /* background-image: url('../../../assets/backgrounds/arenafight_bg.svg'); */
-    background-size: cover;
-    background-position: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Pixelify Sans', sans-serif;
-    color: #f3f3f3;
-    padding: 2rem;
-  }
+  width: 1000px;
+  background-image: url('/assets/backgrounds/arenafight_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #f3f3f3;
+  padding: 2rem;
+}
+
   
   .arena-fight-wrapper {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    max-width: 1000px;
+    width: 100%;
+
     margin-bottom: 2rem;
   }
   

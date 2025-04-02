@@ -1,33 +1,38 @@
 .arena-container {
-  /* background-image: url('../../../assets/backgrounds/arena_bg.svg'); */
-  background-size: cover;
+  height: 85vh;
+  width: 100%;
+  background-image: url('/assets/backgrounds/arena_bg.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-color: #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
+
 
 .arena-wrapper {
   width: 100%;
-  max-width: 600px; /* szerszy panel */
+  max-width: 800px; 
   padding: 2rem;
   display: flex;
   justify-content: center;
 }
 
 .arena-panel {
-  background-color: rgba(12, 12, 12, 0.9);
-  padding: 50px;
-  border: 3px solid #f9f1a5;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  font-family: 'Pixelify Sans', sans-serif;
-  color: #f3f3f3;
-  box-shadow: 0 0 15px #f9f1a5;
-  width: 100%;
+  text-align: center;
 }
+
+.arena-panel input,
+.arena-panel button {
+
+  margin: 0 auto 20px auto;
+  width: 100%;
+  max-width: 400px;
+}
+
 
 input[type="text"] {
   padding: 12px;
