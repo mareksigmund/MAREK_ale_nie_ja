@@ -1,8 +1,13 @@
 .fight-container {
-  background-image: url('../../../assets/backgrounds/fight_bg.svg');
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background-image: url('/assets/backgrounds/fight_bg.svg');
   background-size: cover;
   background-position: center;
-  height: 100%;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -10,6 +15,7 @@
   font-family: 'Pixelify Sans', sans-serif;
   padding: 2rem;
 }
+
 
 .fighter {
   display: flex;

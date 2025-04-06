@@ -103,4 +103,13 @@ export class QuestComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.intervalSub?.unsubscribe();
   }
+
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+  
+  logout() {
+    localStorage.removeItem('charName');
+    this.router.navigate(['/']);
+  }
 }

@@ -8,6 +8,96 @@
   font-family: 'Pixelify Sans', sans-serif;
 }
 
+.quest-fullscreen-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  border-top: 1px solid white;
+  background-color: #0C0C0C;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: #fff;
+  color: #0C0C0C;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+
+.quest-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../../assets/backgrounds/quest_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #F3F3F3;
+  font-family: 'Pixelify Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quest-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.quest-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 200px;
+}
+
+.quest-buttons button {
+  padding: 0.6rem 1rem;
+  border: 1px solid #F3F3F3;
+  background: none;
+  color: #F3F3F3;
+  border-radius: 8px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quest-buttons button:hover:not(:disabled) {
+  background-color: #F3F3F3;
+  color: #0C0C0C;
+}
+
+.quest-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quest-story {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+
 .quest-grid {
   display: flex;
   justify-content: space-between;
@@ -48,4 +138,30 @@
   padding: 1rem 2rem;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
+}
+
+
+/* Dolne menu */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  border-top: 1px solid white;
+  background-color: #0C0C0C;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: #fff;
+  color: #0C0C0C;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Pixelify Sans', sans-serif;
 }

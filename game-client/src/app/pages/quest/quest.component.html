@@ -1,56 +1,64 @@
-<!-- EKRAN WYBORU QUESTA -->
-<div class="quest-container" *ngIf="!loading && onQuest === false">
-  <div class="quest-grid">
-    <!-- LEWA STRONA: przyciski -->
-    <div class="quest-buttons">
-      <!-- STORY QUESTS -->
-      <h3>Story Quests</h3>
-      <button [disabled]="storyStage! !== 0" (click)="beginQuest(12)">
-        Quest II
-      </button>
-      <button [disabled]="storyStage! !== 1" (click)="beginQuest(22)">
-        Quest IV
-      </button>
-      <button [disabled]="storyStage! !== 2" (click)="beginQuest(32)">
-        Quest VI
-      </button>
-      <button [disabled]="storyStage! !== 3" (click)="beginQuest(42)">
-        Quest VIII
-      </button>
+<div class="quest-fullscreen-wrapper">
+  <!-- EKRAN WYBORU QUESTA -->
+  <div class="quest-container" *ngIf="!loading && onQuest === false">
+    <div class="quest-grid">
+      <!-- LEWA STRONA: przyciski -->
+      <div class="quest-buttons">
+        <h3>Story Quests</h3>
+        <button [disabled]="storyStage! !== 0" (click)="beginQuest(12)">
+          Quest II
+        </button>
+        <button [disabled]="storyStage! !== 1" (click)="beginQuest(22)">
+          Quest IV
+        </button>
+        <button [disabled]="storyStage! !== 2" (click)="beginQuest(32)">
+          Quest VI
+        </button>
+        <button [disabled]="storyStage! !== 3" (click)="beginQuest(42)">
+          Quest VIII
+        </button>
 
-      <!-- REPEATABLE QUESTS -->
-      <h3>Repeatable Quests</h3>
-      <button [disabled]="storyStage! < 0" (click)="beginQuest(11)">
-        Quest I
-      </button>
-      <button [disabled]="storyStage! < 1" (click)="beginQuest(21)">
-        Quest III
-      </button>
-      <button [disabled]="storyStage! < 2" (click)="beginQuest(31)">
-        Quest V
-      </button>
-      <button [disabled]="storyStage! < 3" (click)="beginQuest(41)">
-        Quest VII
-      </button>
-    </div>
+        <h3>Repeatable Quests</h3>
+        <button [disabled]="storyStage! < 0" (click)="beginQuest(11)">
+          Quest I
+        </button>
+        <button [disabled]="storyStage! < 1" (click)="beginQuest(21)">
+          Quest III
+        </button>
+        <button [disabled]="storyStage! < 2" (click)="beginQuest(31)">
+          Quest V
+        </button>
+        <button [disabled]="storyStage! < 3" (click)="beginQuest(41)">
+          Quest VII
+        </button>
+      </div>
 
-    <!-- PRAWA STRONA: tekst fabularny -->
-    <div class="quest-story">
-      <h2>STORY {{ storyStage }}</h2>
-      <p>Tu pojawi się tekst fabularny dla storyStage = {{ storyStage }}</p>
+      <!-- PRAWA STRONA -->
+      <div class="quest-story">
+        <h2>STORY {{ storyStage }}</h2>
+        <p>Tu pojawi się tekst fabularny dla storyStage = {{ storyStage }}</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- EKRAN ODLICZANIA -->
-<div class="quest-countdown" *ngIf="!loading && onQuest === true">
-  <h2 class="quest-title">{{ questName }}</h2>
-
-  <div class="quest-desc-box">
-    <p>{{ questDesc }}</p>
+  <!-- EKRAN ODLICZANIA -->
+  <div class="quest-container" *ngIf="!loading && onQuest === true">
+    <div class="quest-countdown">
+      <h2 class="quest-title">{{ questName }}</h2>
+      <div class="quest-desc-box">
+        <p>{{ questDesc }}</p>
+      </div>
+      <div class="quest-timer">
+        <h1>{{ timeLeft }}</h1>
+      </div>
+    </div>
   </div>
 
-  <div class="quest-timer">
-    <h1>{{ timeLeft }}</h1>
+  <!-- LOKALNE MENU DOLNE -->
+  <div class="bottom-nav">
+    <button (click)="navigateTo('quest')">QUEST</button>
+    <button (click)="navigateTo('character')">CHARACTER</button>
+    <button (click)="navigateTo('arena')">ARENA</button>
+    <button (click)="logout()">LOG OUT</button>
   </div>
 </div>

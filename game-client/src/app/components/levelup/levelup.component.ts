@@ -52,4 +52,13 @@ export class LevelupComponent {
       }
     });
   }
+
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+  
+  logout() {
+    localStorage.removeItem('charName');
+    this.router.navigate(['/']);
+  }
 }

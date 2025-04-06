@@ -1,21 +1,30 @@
+.arena-fullscreen-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
 .arena-container {
-  height: 85vh;
-  width: 100%;
-  background-image: url('/assets/backgrounds/arena_bg.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
+  flex: 1;
+  background-image: url('../../../assets/backgrounds/arena_bg.svg');
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-color: #0c0c0c;
+
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #f3f3f3;
 }
-
 
 .arena-wrapper {
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -23,16 +32,15 @@
 
 .arena-panel {
   text-align: center;
+  width: 100%;
 }
 
 .arena-panel input,
 .arena-panel button {
-
   margin: 0 auto 20px auto;
   width: 100%;
   max-width: 400px;
 }
-
 
 input[type="text"] {
   padding: 12px;
@@ -74,4 +82,28 @@ button {
 .random-btn:hover {
   background-color: #3cbaba;
   transform: scale(1.05);
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  border-top: 1px solid white;
+  background-color: #0C0C0C;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: #fff;
+  color: #0C0C0C;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Pixelify Sans', sans-serif;
 }

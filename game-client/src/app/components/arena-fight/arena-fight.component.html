@@ -1,50 +1,60 @@
-<div class="arena-fight-bg">
-  <div class="arena-fight-wrapper">
-    <div class="fighter fighter-left">
-      <img
-        [src]="'../../../assets/avatars/' + fightData.avatar1 + '.svg'"
-        class="avatar"
-      />
-      <div class="name">{{ fightData.name1 }}</div>
-      <div class="hp-bar">
-        <div class="hp-fill" [style.width]="getPlayerHpPercent()"></div>
+<div class="arena-fight-fullscreen-wrapper">
+  <div class="arena-fight-bg">
+    <div class="arena-fight-wrapper">
+      <div class="fighter fighter-left">
+        <img
+          [src]="'../../../assets/avatars/' + fightData.avatar1 + '.svg'"
+          class="avatar"
+        />
+        <div class="name">{{ fightData.name1 }}</div>
+        <div class="hp-bar">
+          <div class="hp-fill" [style.width]="getPlayerHpPercent()"></div>
+        </div>
+        <div class="hp-text">
+          {{ currentTurn?.playerHp }} / {{ fightData.hp1 }}
+        </div>
       </div>
-      <div class="hp-text">
-        {{ currentTurn?.playerHp }} / {{ fightData.hp1 }}
+
+      <div class="vs-text">VS</div>
+
+      <div class="fighter fighter-right">
+        <img
+          [src]="'../../../assets/avatars/' + fightData.avatar2 + '.svg'"
+          class="avatar"
+        />
+        <div class="name">{{ fightData.name2 }}</div>
+        <div class="hp-bar">
+          <div class="hp-fill enemy" [style.width]="getEnemyHpPercent()"></div>
+        </div>
+        <div class="hp-text">
+          {{ currentTurn?.enemyHp }} / {{ fightData.hp2 }}
+        </div>
       </div>
     </div>
 
-    <div class="vs-text">VS</div>
+    <div class="arena-fight-log">
+      <div>Turn {{ currentTurn?.turn }}</div>
+      <div *ngIf="currentTurn?.playerTurn">{{ fightData.name1 }} attacks!</div>
+      <div *ngIf="!currentTurn?.playerTurn">{{ fightData.name2 }} attacks!</div>
+      <div *ngIf="currentTurn?.hit">Hit!</div>
+      <div *ngIf="!currentTurn?.hit">Miss!</div>
+    </div>
 
-    <div class="fighter fighter-right">
-      <img
-        [src]="'../../../assets/avatars/' + fightData.avatar2 + '.svg'"
-        class="avatar"
-      />
-      <div class="name">{{ fightData.name2 }}</div>
-      <div class="hp-bar">
-        <div class="hp-fill enemy" [style.width]="getEnemyHpPercent()"></div>
-      </div>
-      <div class="hp-text">
-        {{ currentTurn?.enemyHp }} / {{ fightData.hp2 }}
-      </div>
+    <div
+      class="arena-fight-result"
+      *ngIf="currentTurnIndex === fightData.turns.length - 1"
+    >
+      <h2 *ngIf="fightData.playerWin">YOU WIN</h2>
+      <h2 *ngIf="!fightData.playerWin">YOU LOSE</h2>
+      <button (click)="finish()">BACK</button>
     </div>
   </div>
 
-  <div class="arena-fight-log">
-    <div>Turn {{ currentTurn?.turn }}</div>
-    <div *ngIf="currentTurn?.playerTurn">{{ fightData.name1 }} attacks!</div>
-    <div *ngIf="!currentTurn?.playerTurn">{{ fightData.name2 }} attacks!</div>
-    <div *ngIf="currentTurn?.hit">Hit!</div>
-    <div *ngIf="!currentTurn?.hit">Miss!</div>
-  </div>
-
-  <div
-    class="arena-fight-result"
-    *ngIf="currentTurnIndex === fightData.turns.length - 1"
-  >
-    <h2 *ngIf="fightData.playerWin">YOU WIN</h2>
-    <h2 *ngIf="!fightData.playerWin">YOU LOSE</h2>
-    <button (click)="finish()">BACK</button>
+  <!-- LOKALNE MENU -->
+  <div class="bottom-nav">
+    <button (click)="navigateTo('quest')">QUEST</button>
+    <button (click)="navigateTo('character')">CHARACTER</button>
+    <button (click)="navigateTo('arena')">ARENA</button>
+    <button (click)="logout()">LOG OUT</button>
   </div>
 </div>

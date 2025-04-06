@@ -46,4 +46,13 @@ export class ArenaComponent {
   randomOpponent(): void {
     this.sendFightRequest('random');
   }
+
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+  
+  logout() {
+    localStorage.removeItem('charName');
+    this.router.navigate(['/']);
+  }
 }

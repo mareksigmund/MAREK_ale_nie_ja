@@ -55,4 +55,12 @@ export class ArenaFightComponent implements OnInit {
     return Math.max(0, (hp / maxHp) * 100) + '%';
   }
   
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+  
+  logout() {
+    localStorage.removeItem('charName');
+    this.router.navigate(['/']);
+  }
 }

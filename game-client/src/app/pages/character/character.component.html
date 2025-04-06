@@ -1,95 +1,105 @@
-<div class="character-container" *ngIf="char">
-  <div class="char-info">
-    <img [src]="getAvatarPath()" alt="avatar" class="avatar-img" />
-    <h2 [style.color]="getColor(selectedColor)">{{ char.charName }}</h2>
-    <h3 [style.color]="getColor(selectedColor)">
-      {{ getTitle(selectedTitle) }}
-    </h3>
+<div class="character-fullscreen-wrapper" *ngIf="char">
+  <div class="character-container">
+    <div class="char-info">
+      <img [src]="getAvatarPath()" alt="avatar" class="avatar-img" />
+      <h2 [style.color]="getColor(selectedColor)">{{ char.charName }}</h2>
+      <h3 [style.color]="getColor(selectedColor)">
+        {{ getTitle(selectedTitle) }}
+      </h3>
 
-    <p *ngIf="char.charClass === 'Warrior'">
-      STR: {{ char.att1 }}, DEX: {{ char.att2 }}, CON: {{ char.att3 }}
-    </p>
-    <p *ngIf="char.charClass === 'Wizard'">
-      INT: {{ char.att1 }}, DEX: {{ char.att2 }}, CON: {{ char.att3 }}
-    </p>
+      <p *ngIf="char.charClass === 'Warrior'">
+        STR: {{ char.att1 }}, DEX: {{ char.att2 }}, CON: {{ char.att3 }}
+      </p>
+      <p *ngIf="char.charClass === 'Wizard'">
+        INT: {{ char.att1 }}, DEX: {{ char.att2 }}, CON: {{ char.att3 }}
+      </p>
+    </div>
+
+    <div class="char-settings">
+      <label>
+        Avatar:
+        <select [(ngModel)]="selectedAvatar">
+          <option *ngFor="let i of [0, 1, 2]" [value]="i">{{ i }}</option>
+        </select>
+      </label>
+
+      <label>
+        Color:
+        <select [(ngModel)]="selectedColor">
+          <option
+            *ngFor="let i of [0, 1, 2, 3]"
+            [value]="i"
+            [disabled]="!char.colorUnlocks[i]"
+          >
+            {{ i }}
+          </option>
+        </select>
+      </label>
+
+      <label>
+        Title:
+        <select [(ngModel)]="selectedTitle">
+          <option
+            *ngFor="let id of titleOptions"
+            [value]="id"
+            [disabled]="!char.titleUnlocks[id % 10]"
+          >
+            {{ getTitle(id) }}
+          </option>
+        </select>
+      </label>
+
+      <div class="radio-group">
+        <h4>Weapon:</h4>
+        <label *ngFor="let i of [0, 1, 2, 3]">
+          <input
+            type="radio"
+            name="weapon"
+            [value]="i"
+            [(ngModel)]="selectedWeapon"
+            [disabled]="!char.weaponUnlocks[i]"
+          />
+          <img
+            [src]="
+              '../../../assets/weapons/' +
+              (char.charClass === 'Warrior' ? 10 + i : 20 + i) +
+              '.svg'
+            "
+            height="40"
+          />
+        </label>
+      </div>
+
+      <div class="radio-group">
+        <h4>Armor:</h4>
+        <label *ngFor="let i of [0, 1, 2, 3]">
+          <input
+            type="radio"
+            name="armor"
+            [value]="i"
+            [(ngModel)]="selectedArmor"
+            [disabled]="!char.armorUnlocks[i]"
+          />
+          <img
+            [src]="
+              '../../../assets/weapons/' +
+              (char.charClass === 'Warrior' ? 10 + i : 20 + i) +
+              '.svg'
+            "
+            height="40"
+          />
+        </label>
+      </div>
+
+      <button class="save-btn" (click)="saveChanges()">SAVE</button>
+    </div>
   </div>
 
-  <div class="char-settings">
-    <label>
-      Avatar:
-      <select [(ngModel)]="selectedAvatar">
-        <option *ngFor="let i of [0, 1, 2]" [value]="i">{{ i }}</option>
-      </select>
-    </label>
-
-    <label>
-      Color:
-      <select [(ngModel)]="selectedColor">
-        <option
-          *ngFor="let i of [0, 1, 2, 3]"
-          [value]="i"
-          [disabled]="!char.colorUnlocks[i]"
-        >
-          {{ i }}
-        </option>
-      </select>
-    </label>
-
-    <label>
-      Title:
-      <select [(ngModel)]="selectedTitle">
-        <option
-          *ngFor="let id of titleOptions"
-          [value]="id"
-          [disabled]="!char.titleUnlocks[id % 10]"
-        >
-          {{ getTitle(id) }}
-        </option>
-      </select>
-    </label>
-
-    <div class="radio-group">
-      <h4>Weapon:</h4>
-      <label *ngFor="let i of [0, 1, 2, 3]">
-        <input
-          type="radio"
-          name="weapon"
-          [value]="i"
-          [(ngModel)]="selectedWeapon"
-          [disabled]="!char.weaponUnlocks[i]"
-        />
-        <img
-          [src]="
-            '../../../assets/weapons/' +
-            (char.charClass === 'Warrior' ? 10 + i : 20 + i) +
-            '.svg'
-          "
-          height="40"
-        />
-      </label>
-    </div>
-
-    <div class="radio-group">
-      <h4>Armor:</h4>
-      <label *ngFor="let i of [0, 1, 2, 3]">
-        <input
-          type="radio"
-          name="armor"
-          [value]="i"
-          [(ngModel)]="selectedArmor"
-          [disabled]="!char.armorUnlocks[i]"
-        />
-        <img
-          [src]="
-            '../../../assets/weapons/' +
-            (char.charClass === 'Warrior' ? 10 + i : 20 + i) +
-            '.svg'
-          "
-          height="40"
-        />
-      </label>
-    </div>
-
-    <button class="save-btn" (click)="saveChanges()">SAVE</button>
+  <!-- Dolne menu -->
+  <div class="bottom-nav">
+    <button (click)="navigateTo('quest')">QUEST</button>
+    <button (click)="navigateTo('character')">CHARACTER</button>
+    <button (click)="navigateTo('arena')">ARENA</button>
+    <button (click)="logout()">LOG OUT</button>
   </div>
 </div>

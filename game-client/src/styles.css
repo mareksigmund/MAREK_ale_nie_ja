@@ -1,13 +1,19 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #0C0C0C;
-    color: #F3F3F3;
-    font-family: 'Pixelify Sans', sans-serif;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* 💥 zapobiega paskom przewijania */
+  background-color: #0C0C0C;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

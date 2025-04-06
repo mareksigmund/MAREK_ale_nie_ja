@@ -119,4 +119,13 @@ export class CharacterComponent implements OnInit {
       }
     });
   }
+
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+  }
+  
+  logout() {
+    localStorage.removeItem('charName');
+    this.router.navigate(['/']);
+  }
 }

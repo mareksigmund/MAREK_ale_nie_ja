@@ -1,13 +1,25 @@
+.levelup-fullscreen-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
 .levelup-container {
-  /* background-image: url('../../../assets/backgrounds/char_bg.svg'); */
+  flex: 1;
+  background-image: url('../../../assets/backgrounds/char_bg.svg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Pixelify Sans', sans-serif;
   color: #F3F3F3;
+  padding: 2rem;
+  overflow: auto;
 }
 
 .levelup-panel {
@@ -60,7 +72,8 @@ select {
   width: 70px;
 }
 
-button {
+/* 1. Styl TYLKO dla przycisku LevelUp */
+.levelup-panel button {
   padding: 0.9rem 2rem;
   font-size: 1.1rem;
   font-family: inherit;
@@ -74,7 +87,32 @@ button {
   box-shadow: 0 0 10px #f3f3f3;
 }
 
-button:hover {
+.levelup-panel button:hover {
   background-color: #e7dc60;
   transform: scale(1.05);
+}
+
+/* 2. Dolne menu — zostaje jak było */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  border-top: 1px solid white;
+  background-color: #0C0C0C;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: #fff;
+  color: #0C0C0C;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Pixelify Sans', sans-serif;
 }

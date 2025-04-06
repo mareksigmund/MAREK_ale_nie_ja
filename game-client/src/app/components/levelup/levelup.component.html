@@ -1,39 +1,49 @@
-<div class="levelup-container">
-  <div class="levelup-panel">
-    <h2>LEVEL UP!</h2>
+<div class="levelup-fullscreen-wrapper">
+  <div class="levelup-container">
+    <div class="levelup-panel">
+      <h2>LEVEL UP!</h2>
 
-    <div class="levelup-grid">
-      <!-- STR -->
-      <div class="attribute-row">
-        <span class="attr-label">Siła (STR)</span>
-        <select [(ngModel)]="first">
-          <option [value]="0">0</option>
-          <option [value]="1">1</option>
-          <option [value]="2">2</option>
-        </select>
+      <div class="levelup-grid">
+        <!-- STR -->
+        <div class="attribute-row">
+          <span class="attr-label">Siła (STR)</span>
+          <select [(ngModel)]="first">
+            <option [value]="0">0</option>
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+          </select>
+        </div>
+
+        <!-- DEX -->
+        <div class="attribute-row">
+          <span class="attr-label">Zręczność (DEX)</span>
+          <select [(ngModel)]="second">
+            <option [value]="0">0</option>
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+          </select>
+        </div>
+
+        <!-- CON -->
+        <div class="attribute-row">
+          <span class="attr-label">Kondycja (CON)</span>
+          <select [(ngModel)]="third">
+            <option [value]="0">0</option>
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+          </select>
+        </div>
       </div>
 
-      <!-- DEX -->
-      <div class="attribute-row">
-        <span class="attr-label">Zręczność (DEX)</span>
-        <select [(ngModel)]="second">
-          <option [value]="0">0</option>
-          <option [value]="1">1</option>
-          <option [value]="2">2</option>
-        </select>
-      </div>
-
-      <!-- CON -->
-      <div class="attribute-row">
-        <span class="attr-label">Kondycja (CON)</span>
-        <select [(ngModel)]="third">
-          <option [value]="0">0</option>
-          <option [value]="1">1</option>
-          <option [value]="2">2</option>
-        </select>
-      </div>
+      <button (click)="levelUp()">Level up!</button>
     </div>
+  </div>
 
-    <button (click)="levelUp()">Level up!</button>
+  <!-- Dolne menu -->
+  <div class="bottom-nav">
+    <button (click)="navigateTo('quest')">QUEST</button>
+    <button (click)="navigateTo('character')">CHARACTER</button>
+    <button (click)="navigateTo('arena')">ARENA</button>
+    <button (click)="logout()">LOG OUT</button>
   </div>
 </div>
