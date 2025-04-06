@@ -63,4 +63,24 @@ export class ArenaFightComponent implements OnInit {
     localStorage.removeItem('charName');
     this.router.navigate(['/']);
   }
+
+  getTitle(id: number, isWizard: boolean = false): string {
+    const titles: Record<number, string> = {
+      10: 'TITLE 0 WAR',
+      11: 'TITLE 1 WAR',
+      12: 'TITLE 2 WAR',
+      13: 'TITLE 3 WAR',
+      20: 'TITLE 0 WIZ',
+      21: 'TITLE 1 WIZ',
+      22: 'TITLE 2 WIZ',
+      23: 'TITLE 3 WIZ'
+    };
+  
+    const base = isWizard ? 20 : 10;
+    const correctedId = base + id;
+  
+    return titles[correctedId] || `TITLE ${id}`;
+  }
+  
+  
 }

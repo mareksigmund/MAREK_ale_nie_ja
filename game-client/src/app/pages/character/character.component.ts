@@ -45,7 +45,7 @@ export class CharacterComponent implements OnInit {
 
         this.selectedAvatar = data.avatarId ?? 0;
         this.selectedColor = data.colorId ?? 0;
-        this.selectedTitle = data.titleId ?? 0;
+        this.selectedTitle = (data.charClass === 'Warrior' ? 10 : 20) + (data.titleId ?? 0);
         this.selectedWeapon = data.equippedWeaponId ?? 0;
         this.selectedArmor = data.equippedArmorId ?? 0;
       },
@@ -67,6 +67,7 @@ export class CharacterComponent implements OnInit {
     };
     return titles[id] || '';
   }
+  
 
   getColor(id: number): string {
     return ['#F3F3F3', '#F9F1A5', '#E74856', '#61D6D6'][id];
@@ -128,4 +129,6 @@ export class CharacterComponent implements OnInit {
     localStorage.removeItem('charName');
     this.router.navigate(['/']);
   }
+
+  
 }

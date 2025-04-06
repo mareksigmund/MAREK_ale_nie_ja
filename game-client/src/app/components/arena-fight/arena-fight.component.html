@@ -7,6 +7,8 @@
           class="avatar"
         />
         <div class="name">{{ fightData.name1 }}</div>
+        <div class="title">{{ getTitle(fightData.title1) }}</div>
+
         <div class="hp-bar">
           <div class="hp-fill" [style.width]="getPlayerHpPercent()"></div>
         </div>
@@ -23,6 +25,8 @@
           class="avatar"
         />
         <div class="name">{{ fightData.name2 }}</div>
+        <div class="title">{{ getTitle(fightData.title2) }}</div>
+
         <div class="hp-bar">
           <div class="hp-fill enemy" [style.width]="getEnemyHpPercent()"></div>
         </div>
